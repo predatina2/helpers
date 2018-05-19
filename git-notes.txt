@@ -1,0 +1,34 @@
+windows console commands
+-------------------------------------------------
+cat start.txt --> ???
+cd projects --> geht in den Ordner "projects", der im aktuellen Verzeichnis liegt
+cd projects/level1 --> geht i den Ordner level1, der im Ordner projects liegt, der im aktuellen Verzeichnis liegt
+cd .. geht in das Elternverzeichnis des aktuellen Verzeichnisses
+cd ../.. geht in das Elternverzeichnis des Elternverzeichnisses des aktuellen Verzeichnisses
+echo "Test Git Quick Start demo" >> start.txt --> Schreibt den Text "..." in die Datei start.txt
+ls --> listet alle Dateien auf, die sich im aktuellen Verzeichnis befinden
+ls -al --> listet alle Dateien auf, die sich im aktuellen Verzeichnis befinden plus ???
+mkdir --> erstellt neuen Ordner im aktuellen Verzeichnis
+pwd --> zeigt den aktuellen Pfad, von dem Verzeichnis, in dem man sich befindet
+
+git bash commands - Initialisierung / Config
+-------------------------------------------------
+git version --> zeigt die aktuelle git Version an, die benutzt wird
+git config --global user.name "RGE" --> setzt den git Usernamen in der git Config
+git config --global user.email "RGE@email.de" --> setzt die git E-Mail in der git Config
+git config --global --list --> listet alle Einstellungen der git config auf
+
+git bash commands - Allgemein
+-------------------------------------------------
+git ls-files --> listet alle Dateien auf, die sich im Git Staging befinden
+git status --> gibt Auskunft, ob Dateien im Staging, Git oder Remote fehlen
+
+git bash commands - Projektarbeit - Remote
+-------------------------------------------------
+git add start.txt --> schiebt den aktuelln Stand der Datei start.txt in Staging
+git clone github-https-url --> schreibt das Projekt (remote) mit der Url, die man aus seinem GitHub hat (clone URL) in das aktuelle Verzeichnis
+git commit -m "Adding start Text file" --> Inline commit der aktuellen Änderung, die sich im Staging befindet.
+git push origin master --> schiebt den aktuellen Stand, der auf Stage liegt und comitted ist auf den master brunch remote
+
+git bash commands - Projektarbeit - lokal
+-------------------------------------------------
