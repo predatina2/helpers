@@ -5,7 +5,7 @@ cd projects --> geht in den Ordner "projects", der im aktuellen Verzeichnis lieg
 cd projects/level1 --> geht i den Ordner level1, der im Ordner projects liegt, der im aktuellen Verzeichnis liegt
 cd .. geht in das Elternverzeichnis des aktuellen Verzeichnisses
 cd ../.. geht in das Elternverzeichnis des Elternverzeichnisses des aktuellen Verzeichnisses
-echo "Test Git Quick Start demo" >> start.txt --> Schreibt den Text "..." in die Datei start.txt
+echo "Test Git Quick Start demo" >> start.txt --> Schreibt den Text "..." in die Datei start.txt. Falls die nicht existiert wird sie angelegt.
 ls --> listet alle Dateien auf, die sich im aktuellen Verzeichnis befinden
 ls -al --> listet alle Dateien auf, die sich im aktuellen Verzeichnis befinden plus ???
 mkdir --> erstellt neuen Ordner im aktuellen Verzeichnis
