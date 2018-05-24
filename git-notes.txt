@@ -1,5 +1,5 @@
-windows console commands
--------------------------------------------------
+# windows console commands
+
 cat start.txt --> ???
 cd projects --> geht in den Ordner "projects", der im aktuellen Verzeichnis liegt
 cd projects/level1 --> geht i den Ordner level1, der im Ordner projects liegt, der im aktuellen Verzeichnis liegt
@@ -11,23 +11,37 @@ ls -al --> listet alle Dateien auf, die sich im aktuellen Verzeichnis befinden p
 mkdir --> erstellt neuen Ordner im aktuellen Verzeichnis
 pwd --> zeigt den aktuellen Pfad, von dem Verzeichnis, in dem man sich befindet
 
-git bash commands - Initialisierung / Config
--------------------------------------------------
-git version --> zeigt die aktuelle git Version an, die benutzt wird
-git config --global user.name "RGE" --> setzt den git Usernamen in der git Config
-git config --global user.email "RGE@email.de" --> setzt die git E-Mail in der git Config
-git config --global --list --> listet alle Einstellungen der git config auf
+# git bash commands
 
-git bash commands - Allgemein
--------------------------------------------------
+## git michelangelous
+
+git version --> zeigt die aktuelle git Version an, die benutzt wird
 git ls-files --> listet alle Dateien auf, die sich im Git Staging befinden
-git status --> gibt Auskunft, ob Dateien im Staging, Git oder Remote fehlen
+git status : list the changed files and those who still have to add for a commit
+
+## creating repositories
+
+git init : create a new local repository
+git clone github-https-url : Check out a repository from a remote server
+git clone /path/to/repository : Check out a repository as working copy from a local repository
+
+## git config
+
+git config --global --list --> listet alle Einstellungen der git config auf
+git config --global user.name "RGE" --> Namen, den git in commits verwendet
+git config --global user.email "RGE@email.de" --> E-Mail, die git in Commits verwendet
+
+
+## git add and commit
+git add start.txt : add the mentioned file to staging
+git add * : add all untracked files to staging
+git commit -m "Adding start Text file" : Inline commit changes from staging to head
+git commit -a : add changes to staging and commit them to head and all other files in staging
 
 git bash commands - Projektarbeit - Remote
 -------------------------------------------------
-git add start.txt --> schiebt den aktuelln Stand der Datei start.txt in Staging
-git clone github-https-url --> schreibt das Projekt (remote) mit der Url, die man aus seinem GitHub hat (clone URL) in das aktuelle Verzeichnis
-git commit -m "Adding start Text file" --> Inline commit der aktuellen Änderung, die sich im Staging befindet.
+
+
 git push origin master --> schiebt den aktuellen Stand, der auf Stage liegt und comitted ist auf den master brunch remote
 
 git bash commands - Projektarbeit - lokal
