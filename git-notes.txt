@@ -1,15 +1,26 @@
 # windows console commands
 
-cat start.txt --> ???
-cd projects --> geht in den Ordner "projects", der im aktuellen Verzeichnis liegt
-cd projects/level1 --> geht i den Ordner level1, der im Ordner projects liegt, der im aktuellen Verzeichnis liegt
+alias npp = 'notepad++.exe -multiInst -nosession' : Shortcut for notepad, can access the editor now with: npp
+cat start.txt : ???
+cd projects : geht in den Ordner "projects", der im aktuellen Verzeichnis liegt
+cd projects/level1 : geht i den Ordner level1, der im Ordner projects liegt, der im aktuellen Verzeichnis liegt
 cd .. geht in das Elternverzeichnis des aktuellen Verzeichnisses
 cd ../.. geht in das Elternverzeichnis des Elternverzeichnisses des aktuellen Verzeichnisses
+clear : deletes current screen in console
 echo "Test Git Quick Start demo" >> start.txt --> Schreibt den Text "..." in die Datei start.txt. Falls die nicht existiert wird sie angelegt.
 ls --> listet alle Dateien auf, die sich im aktuellen Verzeichnis befinden
 ls -al --> listet alle Dateien auf, die sich im aktuellen Verzeichnis befinden plus ???
 mkdir --> erstellt neuen Ordner im aktuellen Verzeichnis
+ms <file1> <file2> : rename source to destination
 pwd --> zeigt den aktuellen Pfad, von dem Verzeichnis, in dem man sich befindet
+rm -rf <filename> : delates file or folder with all subfolders !!!
+unzip ~<relative path> : unzips from relative path to current directory
+
+
+# open important working files
+npp .bashrc : example --> "notepad++.exe -multiInst -nosession"
+npp .gitconfig : saves global config for git
+npp ~/.gitconfig : saves global config for git (actually linux)
 
 # git bash commands
 
@@ -19,30 +30,68 @@ git version --> zeigt die aktuelle git Version an, die benutzt wird
 git ls-files --> listet alle Dateien auf, die sich im Git Staging befinden
 git status : list the changed files and those who still have to add for a commit
 
+
 ## creating repositories
 
-git init : create a new local repository
+git init <projectname> : create a new local repository
 git clone github-https-url : Check out a repository from a remote server
 git clone /path/to/repository : Check out a repository as working copy from a local repository
 
+
 ## git config
 
-git config --global --list --> listet alle Einstellungen der git config auf
+git config --global --list : listet alle Einstellungen der git config auf
 git config --global user.name "RGE" --> Namen, den git in commits verwendet
 git config --global user.email "RGE@email.de" --> E-Mail, die git in Commits verwendet
+git config --global core.editor "notepad++.exe -multiInst -nosession"
 
 
 ## git add and commit
+
 git add start.txt : add the mentioned file to staging
+git add . : adds / stages all of the files in the current directory. This is for convenience, and can still be used if you have certain files you don't want to add by using a .gitignore
 git add * : add all untracked files to staging
 git commit -m "Adding start Text file" : Inline commit changes from staging to head
 git commit -a : add changes to staging and commit them to head and all other files in staging
 
-git bash commands - Projektarbeit - Remote
--------------------------------------------------
+
+## git branches
+
+git checkout <branchname> : Switch from one branch to another
+git checkout -b <branchname> : Create a new branch and switch to it
+git checkout -- <filename> : If you mess up, you can replace the changes in your working tree with the last content in head: Changes already added to the index, as well as new files, will be kept.
+git branch  : List all the branches in your repo, and also tell you what branch you're currently in
+git branch -d <branchname> : Delete the feature branch
 
 
-git push origin master --> schiebt den aktuellen Stand, der auf Stage liegt und comitted ist auf den master brunch remote
+## git remote repository
 
-git bash commands - Projektarbeit - lokal
--------------------------------------------------
+git diff : View all the merge conflicts
+git diff --base <filename> : View the conflicts against the base file
+git diff <sourcebranch> <targetbranch> : Preview changes, before merging
+git merge <branchname> : To merge a different branch into your active branch
+git pull : Fetch and merge changes on the remote server to your working directory
+git pull origin master: get updates from remote the master branch to the local repository
+git push origin master : send changes to the master branch of the remote repository
+git push origin <branchname> : Push the branch to your remote repository, so others can use it
+git push origin :<branchname> : Delete a branch on your remote repository
+git push --all origin : Push all branches to your remote repository:
+git push --tags origin : Push all tags to remote repository
+git remote add origin <server> : If you haven't connected your local repository to a remote server, add the server to be aple to push to it
+git remote -v : List all currently configured remote repositories
+
+
+## git tags
+
+git tag 1.0.0 <commitId> : You can use tagging to mark a significant changeset, such as a release
+git log : CommitId is the leading characters of the changeset ID, up to 10, but must be unique. Get the ID using
+git push --tags origin : Push all tags to remote repository
+
+
+## git undo local changes
+git checkout -- <filename> : If you mess up, you can replace the changes in your working tree with the last content in head: Changes already added to the index, as well as new files, will be kept.
+git fetch origin UND git reset --hard origin/master : Instead, to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it, do this
+
+## git search
+
+git grep "foo()" : Search the working directory for foo():
