@@ -70,7 +70,9 @@ git branch -d <branchname> : Delete the feature branch
 git diff : View all the merge conflicts
 git diff --base <filename> : View the conflicts against the base file
 git diff <sourcebranch> <targetbranch> : Preview changes, before merging
+git difftool master bigtrouble : see differences on branch master and bigtrouble in difftool
 git merge <branchname> : To merge a different branch into your active branch
+git mergetools : solve conflicts between two branches during rebase or merge of two branches
 git pull : Fetch and merge changes on the remote server to your working directory
 git pull origin master : get updates from remote the master branch to the local repository
 git push origin master : send changes to the master branch of the remote repository
@@ -79,6 +81,7 @@ git push origin :<branchname> : Delete a branch on your remote repository
 git push --all origin : Push all branches to your remote repository:
 git push --tags origin : Push all tags to remote repository
 git rebase master : rebases the master branch to the myfeature branch where you in myfeature branch
+git rebase --abort : aborts the rebase
 git remote add origin <server> : If you haven't connected your local repository to a remote server, add the server to be aple to push to it
 git remote -v : List all currently configured remote repositories
 
