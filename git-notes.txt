@@ -61,6 +61,7 @@ git checkout <branchname> : Switch from one branch to another
 git checkout -b <branchname> : Create a new branch and switch to it
 git checkout -- <filename> : If you mess up, you can replace the changes in your working tree with the last content in head: Changes already added to the index, as well as new files, will be kept.
 git branch  : List all the branches in your repo, and also tell you what branch you're currently in
+git branch -a : list all the branches in your repo and remote and tell you what branch you're currently in
 git branch -d <branchname> : Delete the feature branch
 
 
@@ -71,12 +72,13 @@ git diff --base <filename> : View the conflicts against the base file
 git diff <sourcebranch> <targetbranch> : Preview changes, before merging
 git merge <branchname> : To merge a different branch into your active branch
 git pull : Fetch and merge changes on the remote server to your working directory
-git pull origin master: get updates from remote the master branch to the local repository
+git pull origin master : get updates from remote the master branch to the local repository
 git push origin master : send changes to the master branch of the remote repository
 git push origin <branchname> : Push the branch to your remote repository, so others can use it
 git push origin :<branchname> : Delete a branch on your remote repository
 git push --all origin : Push all branches to your remote repository:
 git push --tags origin : Push all tags to remote repository
+git rebase master : rebases the master branch to the myfeature branch where you in myfeature branch
 git remote add origin <server> : If you haven't connected your local repository to a remote server, add the server to be aple to push to it
 git remote -v : List all currently configured remote repositories
 
@@ -85,6 +87,7 @@ git remote -v : List all currently configured remote repositories
 
 git tag 1.0.0 <commitId> : You can use tagging to mark a significant changeset, such as a release
 git log : CommitId is the leading characters of the changeset ID, up to 10, but must be unique. Get the ID using
+git log --oneline --decorate --all --graph : get a short styled history from entire project as graph
 git push --tags origin : Push all tags to remote repository
 
 
